@@ -2,20 +2,8 @@
 #include <unistd.h>
 #include "memory_allocator.h"
 
-pHead = NULL;
-pTail = NULL;
-mallocLocker = global_malloc_lock;
-
-header_t *getFreeBlock(size_t size)
-{
-	header_t *currt = head;
-	while(currt) {
-		if (currt->infStruct.isFree && currt->infStruct.sizeOfData >= size)
-			return curr;
-		currt = currt->infStruct.next;
-	}
-	return NULL;
-}
+infData *pHead = NULL;
+infData *pTail = NULL;
 
 void* my_malloc(size_t size){
     size_t sizeOfBlocks;

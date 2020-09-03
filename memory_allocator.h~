@@ -17,8 +17,6 @@ typedef union Data{
 infData *pHead, pTail;
 pthread_mutex_t mallocLocker;
 
-header_t *getFreeBlock(size_t size);
-
 void* my_malloc(size_t);
 
 #endif
